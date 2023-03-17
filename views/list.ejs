@@ -13,8 +13,13 @@
       <h1><%= kindOfDay %></h1>
 
       <ul>
-        <li>Clothes</li>
-        <li> <%= newListItem %> </li>
+        <!-- ADDING SOME TASKS -->
+        <% for (var i = 0; i<newListItems.length; i++){ %>
+          <li><%= newListItems[i] %></li>
+        <% }; %>
+
+
+
       </ul>
 
       <form action="/" method="post">
@@ -26,6 +31,6 @@
 
 
 
-    
+
   </body>
 </html>
