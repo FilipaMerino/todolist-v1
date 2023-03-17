@@ -9,14 +9,18 @@ app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
 
-  const today = new Date ();
-  const currentDay = today.getDay();
-  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const day = weekday[currentDay];
+  var today = new Date ();
 
-    res.render("list", {kindOfDay: day});
+  var options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  };
 
-  });
+  var day = today.toLocaleDateString("en-US", options);
+  res.render("list", {kindOfDay: day});
+
+});
 
 
 app.listen(3000, function(){
