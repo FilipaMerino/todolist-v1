@@ -9,28 +9,26 @@
   </head>
   <body>
 
-
+    <div class="box" id="heading">
       <h1><%= kindOfDay %></h1>
+    </div>
 
-      <ul>
+    <div class="box" id="">
+      <div class="item">
         <!-- ADDING SOME TASKS -->
         <% for (let i = 0; i<newListItems.length; i++){ %>
-          <li><%= newListItems[i] %></li>
+          <input type="checkbox" class="" id="">
+          <p><%= newListItems[i] %></p>
         <% }; %>
+      </div>
 
+        <form class ="item" action="/" method="post">
 
+          <input type="text" name="newItem" placeholder="Add task">
+          <button type="submit" name="button">+</button>
 
-      </ul>
-
-      <form action="/" method="post">
-
-        <input type="text" name="newItem" placeholder="Add task">
-        <button type="submit" name="button">Add</button>
-
-      </form>
-
-
-
+        </form>
+      </div>
 
   </body>
 </html>
