@@ -7,30 +7,16 @@ const app = express();
 // ejs alwas has to come after initialized app
 app.set('view engine', 'ejs');
 
-
-
-
-
 app.get("/", function(req, res){
 
-
-
-  var today = new Date ();
-  var currentDay = today.getDay();
-  var day = "";
-
-  if(currentDay === 0 || currentDay === 6){
-      day = "Weekend";
-    } else {
-      day = "Weekday";
-    }
+  const today = new Date ();
+  const currentDay = today.getDay();
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const day = weekday[currentDay];
 
     res.render("list", {kindOfDay: day});
 
   });
-
-
-
 
 
 app.listen(3000, function(){
