@@ -7,8 +7,8 @@ console.log(date);
 
 const app = express();
 
-let items = []; // this is necessary in order to be able to use a variable from a post request to a get request.
-let workItems = [];
+const items = []; // this is necessary in order to be able to use a variable from a post request to a get request.
+const workItems = [];
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
 
-  let day = date();
+  const day = date.getDate();
 
   res.render("list", {listTitle: day, newListItems: items});
 
@@ -26,7 +26,7 @@ app.get("/", function(req, res){
 
 app.post("/", function(req, res){
 
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   if (req.body.list === "Work"){
     workItems.push(item);
     res.redirect("/work");
@@ -48,7 +48,7 @@ app.get("/work", function(req, res){
 app.post("/work", function(req, res){
 
 
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   workItems.push(item);
   res.redirect("/work");
 });
