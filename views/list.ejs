@@ -13,18 +13,18 @@
       <h1><%= kindOfDay %></h1>
     </div>
 
-    <div class="box" id="">
-      <div class="item">
-        <!-- ADDING SOME TASKS -->
-        <% for (let i = 0; i<newListItems.length; i++){ %>
+    <div class="box">
+      <!-- ADDING SOME TASKS -->
+      <% for (let i = 0; i<newListItems.length; i++){ %>
+        <div class="item">
           <input type="checkbox" class="" id="">
           <p><%= newListItems[i] %></p>
+        </div>
         <% }; %>
-      </div>
 
         <form class ="item" action="/" method="post">
 
-          <input type="text" name="newItem" placeholder="Add task">
+          <input type="text" name="newItem" placeholder="Add task" autocomplete="off">
           <button type="submit" name="button">+</button>
 
         </form>
