@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>To Do List</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
+<%- include('header'); %>
 
     <div class="box" id="heading">
       <h1><%= listTitle %></h1>
@@ -30,5 +21,4 @@
         </form>
       </div>
 
-  </body>
-</html>
+      <%- include('footer'); %>
