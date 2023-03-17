@@ -2,10 +2,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+
 const app = express();
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
 
 // ejs alwas has to come after initialized app
-app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
 
@@ -19,6 +21,15 @@ app.get("/", function(req, res){
 
   var day = today.toLocaleDateString("en-US", options);
   res.render("list", {kindOfDay: day});
+
+});
+
+
+app.post("/", function(req, res){
+
+  var taskList = req.body.newItem;
+  console.log(taskList);
+
 
 });
 
