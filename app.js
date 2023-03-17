@@ -7,6 +7,7 @@ const app = express();
 let items = []; // this is necessary in order to be able to use a variable from a post request to a get request.
 
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // ejs alwas has to come after initialized app
